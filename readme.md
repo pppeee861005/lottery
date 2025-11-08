@@ -151,3 +151,38 @@ except (KeyError, TypeError) as e:
 4. **提取號碼**：從 `drawNumberAppear` 欄位取得開獎號碼
 5. **顯示結果**：用 `print()` 在螢幕上顯示開獎號碼
 6. **錯誤處理**：包含請求失敗和資料解析錯誤的處理機制
+
+
+
+---
+
+## Prompt 範本（供未來使用）
+
+以下是用於生成上述程式碼的原始 prompt 指令：
+
+```
+我已經有正確的 API 端點 URL：
+https://api.taiwanlottery.com/TLCAPIWeB/Lottery/LatestResult
+
+請幫我寫一個 Python 程式，執行以下步驟：
+
+2. 用 requests.get() 方法發送請求到這個端點
+3. 得到回傳的 JSON 資料
+4. 提取大樂透 638 的開獎號碼（drawNumberAppear 欄位）
+5. 用 print() 在螢幕上顯示結果
+
+要求：
+- 程式要簡潔清晰
+- 包含必要的 import 語句
+- 加上註解說明每一步在做什麼
+- 如果請求失敗要有錯誤處理
+```
+
+### 使用說明
+
+當你需要類似的程式碼時，可以直接使用上面的 prompt 範本，只需：
+1. 更換 API URL
+2. 修改要提取的欄位名稱
+3. 調整顯示的內容
+
+就能快速生成新的 API 請求程式碼！
