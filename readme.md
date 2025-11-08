@@ -107,3 +107,47 @@ python lottery.py
 
 此项目仅供教育目的。
 
+
+
+
+---
+
+## 簡單範例程式碼
+
+以下是一個簡潔的 Python 程式碼範例，用於獲取大樂透 638 開獎號碼：
+
+```python
+import requests  # 匯入 requests 套件用來發送 HTTP 請求
+
+# API 端點 URL
+url = "https://api.taiwanlottery.com/TLCAPIWeB/Lottery/LatestResult"
+
+try:
+    # 發送 GET 請求，獲取 JSON 資料
+    response = requests.get(url)
+    response.raise_for_status()  # 檢查請求是否成功, 若否則丟出例外
+
+    data = response.json()  # 取得回傳的 JSON 資料
+
+    # 提取大樂透638號碼（drawNumberAppear 欄位）
+    super_lotto_638 = data["content"]["superLotto638Result"]["drawNumberAppear"]
+
+    # 螢幕顯示號碼結果
+    print("大樂透638開獎號碼:", super_lotto_638)
+
+except requests.RequestException as e:
+    # 若請求失敗，顯示錯誤訊息
+    print("API請求失敗:", e)
+except (KeyError, TypeError) as e:
+    # 資料解析錯誤處理
+    print("資料解析失敗:", e)
+```
+
+### 程式碼說明
+
+1. **匯入模組**：使用 `requests` 模組發送 HTTP 請求
+2. **發送請求**：用 `requests.get()` 方法獲取 API 資料
+3. **解析 JSON**：將回傳的 JSON 資料轉換為 Python 字典
+4. **提取號碼**：從 `drawNumberAppear` 欄位取得開獎號碼
+5. **顯示結果**：用 `print()` 在螢幕上顯示開獎號碼
+6. **錯誤處理**：包含請求失敗和資料解析錯誤的處理機制
