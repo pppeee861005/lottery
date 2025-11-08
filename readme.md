@@ -99,5 +99,11 @@ python lottery.py
 - 开奖顺序：`drawNumberAppear`（前6个号码为第一区，最后一个为第二区）
 
 ## 许可证
+總結如下：
+你目前看到的連結 https://api.taiwanlottery.com/TLCAPIWeB/Lottery/LatestResult 是台灣彩券的 API，回傳最新彩券結果資料（JSON 格式），不是一般視覺化的網頁。
+這個 API 通常不是讓人直接用瀏覽器瀏覽，而是前端網頁（像 www.taiwanlottery.com）用 JavaScript 透過 Ajax、fetch 或 XHR 等方法「動態載入」這份資料，然後再渲染在網頁上。
+所以，官方網站的彩券結果顯示，並不是寫死在 HTML 裡，而是每次動態請求這個 API，把最新內容即時更新在網頁裡。
+簡單說，你看到的資料就是官方網站動態載入的來源，屬於資料介面，而非直接顯示內容。
 
 此项目仅供教育目的。
+
